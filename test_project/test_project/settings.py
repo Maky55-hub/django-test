@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    # add sass_processor for using scss
     'sass_processor',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -122,10 +123,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+# add STATICFILES_FINDERS and SASS_PROCESSOR_ROOT inorder to use scss
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'sass_processor.finders.CssFinder',
 ]
 
 # Django Sass
-SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'blog/static/blog')
+SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'blog/static')
