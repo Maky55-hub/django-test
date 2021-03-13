@@ -33,8 +33,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blog.apps.BlogConfig',
+    'users.apps.UsersConfig',
     # add sass_processor for using scss
     'sass_processor',
+    # django_crispy_forms library is used to give forms bootstrap classes
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -79,8 +82,12 @@ WSGI_APPLICATION = 'test_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'django',
+        'USER': 'postgres',
+        'PASSWORD': 'Pa$$w0rd',
+        'HOST': '127.0.0.1',
+        'PORT': '5432'
     }
 }
 
@@ -131,3 +138,6 @@ STATICFILES_FINDERS = [
 
 # Django Sass
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'blog/static')
+
+# To tell django_crispy_forms to use bootstrap4, while default is bootstrap2
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
