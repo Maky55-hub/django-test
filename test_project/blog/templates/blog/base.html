@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link href="{% sass_src 'blog/main.scss' %}" rel="stylesheet" type="text/css" />
 
-    <title>Document</title>
+    <title>Django-test</title>
 </head>
 <body>
     <header class="site-header">
@@ -40,6 +40,15 @@
     <main role="main" class="container">
       <div class="row">
         <div class="col-md-8">
+          {% comment %} the following code is needed to display messages created with django.contrib messages {% endcomment %}
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-{{ message.tags }}">
+                {{ message }}
+              </div>
+            {% endfor %}
+          {% endif %}
+          {% comment %} this is where this base html is going to be extended {% endcomment %}
           {% block content %} {% endblock content %}
         </div>
         <div class="col-md-4">
