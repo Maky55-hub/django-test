@@ -135,6 +135,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'Blog-Home'
+LOGIN_URL = 'Login'
+
 # add STATICFILES_FINDERS and SASS_PROCESSOR_ROOT inorder to use scss
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
@@ -146,3 +149,23 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR,'blog/static')
 
 # To tell django_crispy_forms to use bootstrap4, while default is bootstrap2
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# inorder to send emails
+EMAIL_BACKEND = env('EMAIL_BACKEND')
+EMAIL_HOST = env('EMAIL_HOST') #The email host refers the email provider which is expected to reach, it represents the smtp host name of that email provider.
+EMAIL_HOST_USER = env('EMAIL_HOST_USER') #This represents the user name of the email account to be connected.
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD') #This represents the password of the corresponding email account.
+EMAIL_USE_TLS = False
+DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
+EMAIL_PORT = 465 #The email port refers the email providers port which is opened for smtp connectivity.
+
+# use the following settings inorder to listen to emails at port localhost:1025
+# start the local server with: python -m smtpd -n -c DebuggingServer localhost:1025
+
+# EMAIL_BACKEND = env('EMAIL_BACKEND')
+# EMAIL_HOST = 'localhost' #The email host refers the email provider which is expected to reach, it represents the smtp host name of that email provider.
+# EMAIL_HOST_USER = '' #This represents the user name of the email account to be connected.
+# EMAIL_HOST_PASSWORD = '' #This represents the password of the corresponding email account.
+# EMAIL_USE_TLS = False
+# DEFAULT_FROM_EMAIL = ''
+# EMAIL_PORT = 1025 #The email port refers the email providers port which is opened for smtp connectivity.
