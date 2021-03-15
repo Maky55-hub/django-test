@@ -135,6 +135,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+LOGIN_REDIRECT_URL = 'Blog-Home'
+LOGIN_URL = 'Login'
+
 # add STATICFILES_FINDERS and SASS_PROCESSOR_ROOT inorder to use scss
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',

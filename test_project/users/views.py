@@ -21,9 +21,9 @@ def user_registration(request):
                 email_from,
                 [email_to]
             )
-            email_message.send(fail_silently=False)
+            #email_message.send(fail_silently=False)
 
-            #form.save()
+            form.save()
             # show a success message, after a user account is created
             messages.success(request, f'Account for {username} is created')
             return redirect('Blog-Home')
