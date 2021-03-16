@@ -138,6 +138,9 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'Blog-Home'
 LOGIN_URL = 'Login'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
 # add STATICFILES_FINDERS and SASS_PROCESSOR_ROOT inorder to use scss
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
