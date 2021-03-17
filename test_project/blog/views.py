@@ -19,6 +19,7 @@ class PostListView(ListView):
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by = 2 # attribute of ListView, which adds pagination to the list of the objects, here 2 means 2 objects to be shown on each page
 
 
 class PostDetailView(DetailView):
