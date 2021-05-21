@@ -22,7 +22,7 @@ def user_registration(request):
                 email_from,
                 [email_to]
             )
-            #email_message.send(fail_silently=False)
+            email_message.send(fail_silently=False)
 
             form.save()
             # show a success message, after a user account is created

@@ -158,7 +158,7 @@ EMAIL_BACKEND = env('EMAIL_BACKEND')
 EMAIL_HOST = env('EMAIL_HOST') #The email host refers the email provider which is expected to reach, it represents the smtp host name of that email provider.
 EMAIL_HOST_USER = env('EMAIL_HOST_USER') #This represents the user name of the email account to be connected.
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD') #This represents the password of the corresponding email account.
-EMAIL_USE_TLS = False
+EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = env('DEFAULT_FROM_EMAIL')
 EMAIL_PORT = 465 #The email port refers the email providers port which is opened for smtp connectivity.
 
