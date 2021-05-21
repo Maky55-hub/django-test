@@ -37,3 +37,7 @@ pip install pipenv
 2. pipenv install -r requirements.txt -> installs the packages from the requirements.txt file and adds them also to the Pipfile.
 3. pipenv lock -r > requirements.txt -> adds the packages installed in the environment to the requirements.txt file.
 4. pipenv uninstall <package.name> uninstalls a package from the environment and also removes it from the Pipfile
+
+
+## .env File
+Setup the environments file with the credentials for your DB in the folder where settings.py resides
